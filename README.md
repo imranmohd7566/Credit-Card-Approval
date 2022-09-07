@@ -12,5 +12,5 @@ Since the datasets were imbalanced the results are skewed, to overcome this I us
 
 The frontend of the project was developed using Flask, and HTML.
 
-![image](https://user-images.githubusercontent.com/50734928/188988243-681eafbf-cf9e-463b-883a-53c916a21672.png)
+![image](https://user-images.githubusercontent.com/50734928/188988613-aa20100c-e4c7-45aa-8424-6c7e01614463.png)
 ![image](https://user-images.githubusercontent.com/50734928/188988346-712b1d47-3449-4fc3-97f5-5a4ed7f81ebf.png)
