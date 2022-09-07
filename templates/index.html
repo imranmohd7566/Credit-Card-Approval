@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <div style="color:black">
+        <form action="{{ url_for('predict')}}" method="post">
+            <h2>Credit Card Approval Prediction</h2>
+            <h3>Applicant Details</h3>
+            <h3>What is your name?</h3><input id="third" name="Name" type="string" required="required">          
+            <h3>What is your age?</h3><input id="third" name="Age" type="number" required="required">          
+            <h3>Gender</h3><br><select id="fourth" name="Gender" required="required">
+                <option value="Male">Male</option>
+                <option value="Female">Female</option>
+            </select>
+            <h3>How Many children do you have?</h3><input id="second" name="Children" type="number" required="required">
+            <h3>How many family members stay at your home?</h3><input id="third" name="Family_members" type="number" required="required">          
+            <h3>Car</h3><br><select id="first" name="Car" required="required">
+                <option value="Yes">Yes</option>
+                <option value="No">No</option>
+            </select>
+            <h3>Realty</h3><br><select id="first" name="Realty" required="required">
+                <option value="Yes">Yes</option>
+                <option value="No">No</option>
+            </select>
+            <h3>How many years have you been employed/working?</h3><input id="third" name="Years_employed" type="number" required="required">          
+            <h3>What is your occupation?</h3><br><select name="Occupation" id="second" required="required">
+                <option value="Cleaning staff">Cleaning staff</option>
+                <option value="Cooking staff">Cooking staff</option>
+                <option value="Core staff">Core staff</option>
+                <option value="Drivers">Drivers</option>
+                <option value="HR staff">HR staff</option>
+                <option value="High skill tech staff">High skill tech staff</option>
+                <option value="IT staff">IT staff</option>
+                <option value="Laborers">Laborers</option>
+                <option value="Low-skill Laborers">Low-skill Laborers</option>
+                <option value="Managers">Managers</option>
+                <option value="Medicine staff">Medicine staff</option>
+                <option value="Private service staff">Private service staff</option>
+                <option value="Realty agents">Realty agents</option>
+                <option value="Sales staff">Sales staff</option>
+                <option value="Secretaries">Secretaries</option>
+                <option value="Security staff">Security staff</option>
+                <option value="Waiters/barmen staff">Waiters/barmen staff</option>
+                <option value="Accountants">Accountants</option>
+            </select>
+            <h3>What is your income?</h3><input id="third" name="Income" type="number" required="required">          
+            <h3>What Is the Income type?</h3><br><select name="Income_type" id="third" required="required">
+                <option value="Pensioner">Pensioner</option>
+                <option value="State servant">State servant</option>
+                <option value="Student">Student</option>
+                <option value="Working">Working</option>
+                <option value="Commercial associate">Commercial associate</option>
+            </select>
+            <h3>What is your highest education?</h3><br><select name="Education" id="second" required="required">
+                <option value="Higher education">Higher education</option>
+                <option value="Incomplete higher">Incomplete higher</option>
+                <option value="Lower secondary">Lower secondary</option>
+                <option value="Secondary / secondary special">Secondary / secondary special</option>
+                <option value="Academic degree">Academic degree</option>
+            </select>
+            <h3>What is your family status?</h3><br><select name="Family_Status" id="second" required="required">
+                <option value="Married">Married</option>
+                <option value="Separated">Separated</option>
+                <option value="Single / not married">Single / not married</option>
+                <option value="Widow">Widow</option>
+                <option value="Civil marriage">Civil marriage</option>
+            </select>
+            <h3>What is the type of your housing?</h3><br><select name="Housing" id="second" required="required">
+                <option value="House / apartment">House / apartment</option>
+                <option value="Municipal apartment">Municipal apartment</option>
+                <option value="Office apartment">Office apartment</option>
+                <option value="Rented apartment">Rented apartment</option>
+                <option value="With parents">With parents</option>
+                <option value="Co-op apartment">Co-op apartment</option>
+            </select>
+            <h3>Do you have a work phone?</h3><br><select id="first" name="Work_phone" required="required">
+                <option value="Yes">Yes</option>
+                <option value="No">No</option>
+            </select>
+            <h3>Do you have a mobile?</h3><br><select id="first" name="Mobile" required="required">
+                <option value="Yes">Yes</option>
+                <option value="No">No</option>
+            </select>
+            <h3>Do you have a phone?</h3><br><select id="first" name="Phone" required="required">
+                <option value="Yes">Yes</option>
+                <option value="No">No</option>
+            </select>
+            <h3>Do you have an email id?</h3><br><select id="first" name="Email" required="required">
+                <option value="Yes">Yes</option>
+                <option value="No">No</option>
+            </select>
+            <br><br><button id="sub" type="submit ">Predict the credit card approval</button>
+            <br>
+
+        </form>
+
+        <br><br><h3>{{ prediction_text }}<h3>
+    </div>
+
+    <style>
+        body {
+            background-color: gray;
+            text-align: center;
+            padding: 0px;
+        }
+        
+        #research {
+            font-size: 18px;
+            width: 100px;
+            height: 23px;
+            top: 23px;
+        }
+        
+        #box {
+            border-radius: 60px;
+            border-color: 45px;
+            border-style: solid;
+            font-family: cursive;
+            text-align: center;
+            background-color: rgb(168, 131, 61);
+            font-size: medium;
+            position: absolute;
+            width: 700px;
+            bottom: 9%;
+            height: 850px;
+            right: 30%;
+            padding: 0px;
+            margin: 0px;
+            font-size: 14px;
+        }
+        
+        #fuel {
+            width: 83px;
+            height: 43px;
+            text-align: center;
+            border-radius: 14px;
+            font-size: 20px;
+        }
+        
+        #fuel:hover {
+            background-color: coral;
+        }
+        
+        #research {
+            width: 99px;
+            height: 43px;
+            text-align: center;
+            border-radius: 14px;
+            font-size: 18px;
+        }
+        
+        #research:hover {
+            background-color: coral;
+        }
+        
+        #resea {
+            width: 99px;
+            height: 43px;
+            text-align: center;
+            border-radius: 14px;
+            font-size: 18px;
+        }
+        
+        #resea:hover {
+            background-color: coral;
+        }
+        
+        #sub {
+            width: 160px;
+            height: 73px;
+            text-align: center;
+            border-radius: 18px;
+            font-size: 12px;
+        }
+        
+        #sub:hover {
+            background-color: darkcyan;
+        }
+        
+        #first {
+            border-radius: 14px;
+            height: 25px;
+            font-size: 20px;
+            text-align: center;
+        }
+        
+        #second {
+            border-radius: 14px;
+            height: 25px;
+            font-size: 20px;
+            text-align: center;
+        }
+        
+        #third {
+            border-radius: 14px;
+            height: 25px;
+            font-size: 20px;
+            text-align: center;
+        }
+        
+        #fourth {
+            border-radius: 14px;
+            height: 25px;
+            font-size: 20px;
+            text-align: center;
+        }
+    </style>
+</body>
+
+</html>
